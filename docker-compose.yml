@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    container_name: ai-market-analysis-bot
+    volumes:
+      - ./output:/app/output
+      - ./config:/app/config:ro
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Berlin
+    restart: unless-stopped
+
+  # Cron-Job der den Bot stündlich ausführt
+  scheduler:
+    build: .
+    container_name: market-bot-scheduler
+    entrypoint: >
+      sh -c "
+        echo '0 8 * * 1-5 cd /app && python main.py --config config/settings.yaml --output /app/output/report.html >> /var/log/cron.log 2>&1' > /etc/crontabs/root &&
+        crond -f
+      "
+    volumes:
+      - ./output:/app/output
+      - ./config:/app/config:ro
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Berlin
+    restart: unless-stopped
+    depends_on:
+      - bot

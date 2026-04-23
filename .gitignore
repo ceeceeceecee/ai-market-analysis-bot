@@ -1,0 +1,31 @@
+# Umgebungsvariablen
+.env
+
+# Konfiguration (kann sensible Daten enthalten)
+config/sources.yaml
+config/settings.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Logs
+*.log
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Geheime Dateien
+*.key
+*.pem
+
+# Output
+output/

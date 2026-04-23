@@ -1,0 +1,25 @@
+# AI Market Analysis Bot — Konfiguration
+# Kopiere diese Datei als settings.yaml und passe sie an
+
+# KI-Anbieter: claude oder gemini
+ai_provider: "claude"
+
+# Pfad zur Quellkonfiguration
+sources_file: "config/sources.yaml"
+
+# Maximale Artikel pro Quelle
+max_articles_per_source: 10
+
+# Report-Einstellungen
+report_title: "Marktanalyse Report"
+output_dir: "output"
+
+# Sprache der Analyse und Reports
+language: "de"
+
+# Zeitplan (für Cron oder n8n)
+schedule:
+  # Wochentage: 1=Montag, 7=Sonntag
+  weekdays: [1, 2, 3, 4, 5]
+  time: "08:00"
+  timezone: "Europe/Berlin"

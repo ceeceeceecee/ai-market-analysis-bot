@@ -1,0 +1,32 @@
+# Nachrichtenquellen für den Market Analysis Bot
+# Kopiere diese Datei als sources.yaml und passe sie an
+
+sources:
+  # === Tech News ===
+  - type: rss
+    url: "https://www.heise.de/rss/heise-atom.xml"
+    category: "Tech"
+    name: "Heise Online"
+
+  - type: rss
+    url: "https://t3n.de/rss"
+    category: "KI"
+    name: "t3n"
+
+  # === Wirtschaft ===
+  - type: rss
+    url: "https://www.handelsblatt.com/rss/"
+    category: "Wirtschaft"
+    name: "Handelsblatt"
+
+  # === KI-spezifisch ===
+  - type: rss
+    url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    category: "KI"
+    name: "The Verge AI"
+
+  # === Einzelne Webseiten ===
+  # - type: web
+  #   url: "https://example.com/important-article"
+  #   category: "Branchennews"
+  #   name: "Beispielartikel"
