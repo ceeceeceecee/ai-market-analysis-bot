@@ -33,31 +33,37 @@ Monitor RSS feeds & websites, analyze with AI, generate professional HTML/PDF re
 
 ---
 
-## Quick Start
+## 🚀 Schnellstart
+
+### Voraussetzungen
+
+| Komponente | Version | Zweck |
+|---|---|---|
+| Python | 3.11+ | Bot-Ausführung |
+| Claude oder Gemini API Key | aktuell | KI-Analyse & Zusammenfassung |
+| Docker (optional) | 20.10+ | Container-Deployment |
+| n8n (optional) | neueste | Automatisierung |
+
+### Installation
 
 ```bash
 git clone https://github.com/ceeceeceecee/ai-market-analysis-bot.git
 cd ai-market-analysis-bot
 
-# Abhängigkeiten
+# Abhängigkeiten installieren
 pip install -r requirements.txt
 
-# Konfiguration
+# Konfiguration anpassen
 cp config/sources.example.yaml config/sources.yaml
 cp config/settings.example.yaml config/settings.yaml
-
-# Bot ausführen
-python main.py --config config/settings.yaml --output output/report.html
-
-# Oder mit Docker
-docker compose up
 ```
 
-### Voraussetzungen
+### Erste Schritte
 
-- Python 3.11+
-- Claude oder Gemini API Key
-- (Optional) n8n für Automatisierung
+1. **Konfiguration anpassen** — RSS-Quellen in `config/sources.yaml` und API-Keys in `config/settings.yaml`
+2. **Bot ausführen:** `python main.py --config config/settings.yaml --output output/report.html`
+3. **Oder mit Docker:** `docker compose up`
+4. **Report öffnen** und generierten HTML-Report prüfen
 
 ---
 
