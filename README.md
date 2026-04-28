@@ -1,7 +1,6 @@
 # Ai Market Analysis Bot
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/ceeceeceecee/ai-document-analyzer/main/docs/coletrading-banner.svg" alt="ColeTrading" width="600">
 </p>
 
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python) ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker) ![Claude](https://img.shields.io/badge/Claude-Supported-9945FF?logo=anthropic) ![License](https://img.shields.io/badge/License-MIT-blue)
@@ -54,5 +53,4 @@ Beiträge sind willkommen! Bitte erstelle einen Issue oder Pull Request.
 MIT License — siehe [LICENSE](LICENSE).
 
 <p align="center">
-<a href="https://github.com/ceeceeceecee">ColeTrading</a> &bull; DSGVO-konform &bull; Self-Hosted &bull; Open Source
 </p>
