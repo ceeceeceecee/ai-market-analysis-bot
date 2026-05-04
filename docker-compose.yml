@@ -1,34 +1,24 @@
-version: "3.8"
-
 services:
-  bot:
-    build: .
-    container_name: ai-market-analysis-bot
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ai-market-analysis-bot-ollama
     volumes:
-      - ./output:/app/output
-      - ./config:/app/config:ro
-    env_file:
-      - .env
-    environment:
-      - TZ=Europe/Berlin
+      - ollama_data:/root/.ollama
+    ports:
+      - "11448:11434"
     restart: unless-stopped
 
-  # Cron-Job der den Bot stündlich ausführt
-  scheduler:
+  app:
     build: .
-    container_name: market-bot-scheduler
-    entrypoint: >
-      sh -c "
-        echo '0 8 * * 1-5 cd /app && python main.py --config config/settings.yaml --output /app/output/report.html >> /var/log/cron.log 2>&1' > /etc/crontabs/root &&
-        crond -f
-      "
-    volumes:
-      - ./output:/app/output
-      - ./config:/app/config:ro
-    env_file:
-      - .env
+    ports:
+      - "8515:8501"
     environment:
-      - TZ=Europe/Berlin
-    restart: unless-stopped
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./data:/app/data
     depends_on:
-      - bot
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
